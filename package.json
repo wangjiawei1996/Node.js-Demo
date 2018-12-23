@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wangjiawei1996/Node.js-demo#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "querystring-util": "^1.1.1"
   }
 }
