@@ -4,7 +4,8 @@
   "description": "",
   "main": "a.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "querystring-util": "^1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }
