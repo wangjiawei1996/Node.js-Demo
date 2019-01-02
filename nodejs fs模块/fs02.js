@@ -15,3 +15,27 @@ fs.stat('upload',function(err,stats){
 		console.log(stats.isDirecyory());
 	}
 })
+//找出html下的所有目录，并打印出来
+var fs = require('fs');
+var filesArr=[];
+fs.readdir('html',function(err,files){
+	if (err){
+		console.log(error)
+	}else{
+		console.log(files);
+		(
+			function getFile(i){
+				if(i==files.length){
+					console.log(filesArr);
+					return false;
+				}
+				fs.stat('html/'+ files[i],function(error,stats){
+					if( stats.isDirecyory()){
+						filesArr.push(files[i]);
+					}
+					//递归操作
+					getFile(i+1); 
+				})
+			})(0)
+	}
+})
