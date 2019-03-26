@@ -4,6 +4,9 @@ export.getMime = function(fs,extname){
 			console.log('mime.json文件不存在')
 			return false
 		}
-		console.log(data)
+		console.log()
+		var Mimes = JSON.parse(data.toString());
+		console.log()
+		return Mimes[extname] || 'text/html'
 	})
 }
