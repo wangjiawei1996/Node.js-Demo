@@ -1,13 +1,10 @@
-var sd = require('silly-datetime')
-var http = require('http');
-
+var http = require('http')
 var config = require('./config.js')
+var app = http.createServer(function(req, res) {
+  res.writeHead(200, {"Content-Type":"text/html;charset=UTF-8"})
 
-var app = http.createServer(function(req,res){
-  res.writeHead(200,{"Content-Type":"text/html;charset=UTF-8"});
-
-  var d = sd.format(new Date(),'YYYY-MM-DD ');
-  res.write('Hello Node.js' + d);
-  res.end();
+  res.write('你好 node.js')
+  console.log(config.str)
+  res.end()
 })
-app.listen(8003,'127.0.0.1')
+app.listen(8003, '127.0.0.1')
