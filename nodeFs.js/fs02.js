@@ -1,20 +1,28 @@
+var fs = require('fs')
 //判断服务器上有没有upload,若没有创建这个目录
-var fs = require('fs');
-fs.stat('upload',function(err,stats){
-  if (err) {
-		fs.mkdir('upload', function(error){
-			if (error) {
-				console.log(error)
-				return false
-			}
-			console.log('创建成功')
-		})
+// fs.stat('upload', function(err, stats) {
+//   if (err) {
+//     console.log(err)
+//     return false
+//   }
+//   console.log(stats.isDirectory())
+// })
+// fs.stat('upload', function(err, stats) {
+//   if (err) {
+//     fs.mkdir('upload', function(error) {
+//       if (error) {
+//         console.log(error)
+//         return false
+//       }
+//       console.log('创建成功')
+//     })
+//   } else {
+//     console.log('目录已经存在')
+//     console.log(stats.isDirectory())
+//   }
+// })
 
-	}else{
-		console.log('目录已经存在');
-		console.log(stats.isDirecyory());
-	}
-})
+
 //找出html下的所有目录，并打印出来
 var fs = require('fs');
 var filesArr=[];
@@ -28,9 +36,9 @@ fs.readdir('html',function(err,files){
 				if(i==files.length){
 					console.log(filesArr);
 					return false;
-				}
+				} 
 				fs.stat('html/'+ files[i],function(error,stats){
-					if( stats.isDirecyory()){
+					if( stats.isDirectory()){
 						filesArr.push(files[i]);
 					}
 					//递归操作
