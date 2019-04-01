@@ -22,6 +22,7 @@
     "express": "^4.16.4",
     "figlet": "^1.2.1",
     "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
     "querystring-util": "^1.1.1",
     "silly-datetime": "^0.1.2"
   },
