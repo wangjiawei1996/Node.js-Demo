@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <%include public/header.ejs%>
+  <h1>ejs循环渲染数据----<%=userinfo%></h1>
+  <ul>
+    <%for(var i=0;i<list.length;i++){%>
+      <li><%=list[i]%></li>
+    <%}%>
+  </ul>
+  <%-content%>
+  <%if(num>24){%>
+    大于24
+  <%}else{%>
+    小于24
+  <%}%>
+</body>
+</html>
